@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>La Librairie pragmatique - Vente en ligne</title>
+  <%= stylesheet_link_tag "depot", :media => "all" %><!-- <label id="code.slt"/> -->
+</head>
+<body id="store">
+  <div id="banner">
+    <img src="/images/logo.png"/>
+    <%= @page_title || "La Librairie pragmatique" %><!-- <label id="code.depot.e.title"/> -->
+  </div>
+  <div id="columns">
+    <div id="side">
+      <%= link_to "Accueil", :controller => 'store' %><br />
+      <a href="http://www..../faq">Questions</a><br />
+      <a href="http://www..../news">Actualités</a><br />
+      <a href="http://www..../contact">Contact</a><br />
+    </div>
+    <div id="main">
+      <%= yield :layout %><!-- <label id="code.depot.e.include"/> -->
+    </div>
+  </div>
+</body>
+</html>

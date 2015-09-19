@@ -1,0 +1,36 @@
+# Logfile created on Tue Jan 30 01:57:17 +0100 2007 by logger.rb/1.5.2.9
+
+
+Processing SayController#goodbye (for 127.0.0.1 at 2007-01-30 02:02:35) [GET]
+  Session ID: 5bbe0b71fcef42212b651aa4a715e112
+  Parameters: {"action"=>"goodbye", "controller"=>"say"}
+Rendering say/goodbye
+Completed in 0.00212 (472 reqs/sec) | Rendering: 0.00141 (66%) | 200 OK [http://localhost/say/goodbye]
+
+
+Processing SayController#hello (for 127.0.0.1 at 2007-01-30 02:03:13) [GET]
+  Session ID: 5bbe0b71fcef42212b651aa4a715e112
+  Parameters: {"action"=>"hello", "controller"=>"say"}
+Rendering say/hello
+Completed in 0.00209 (479 reqs/sec) | Rendering: 0.00142 (67%) | 200 OK [http://localhost/say/hello]
+
+
+Processing SayController#goodbye (for 127.0.0.1 at 2007-01-30 02:15:02) [GET]
+  Session ID: 5bbe0b71fcef42212b651aa4a715e112
+  Parameters: {"action"=>"goodbye", "controller"=>"say"}
+Rendering say/goodbye
+Completed in 0.00216 (463 reqs/sec) | Rendering: 0.00146 (67%) | 200 OK [http://localhost/say/goodbye]
+
+
+Processing SayController#hello (for 127.0.0.1 at 2007-01-30 02:15:12) [GET]
+  Session ID: 5bbe0b71fcef42212b651aa4a715e112
+  Parameters: {"action"=>"hello", "controller"=>"say"}
+Rendering say/hello
+Completed in 0.00210 (475 reqs/sec) | Rendering: 0.00143 (67%) | 200 OK [http://localhost/say/hello]
+
+
+Processing SayController#goodbye (for 127.0.0.1 at 2007-01-30 02:17:23) [GET]
+  Session ID: 5bbe0b71fcef42212b651aa4a715e112
+  Parameters: {"action"=>"goodbye", "controller"=>"say"}
+Rendering say/goodbye
+Completed in 0.00202 (494 reqs/sec) | Rendering: 0.00108 (53%) | 200 OK [http://localhost/say/goodbye]

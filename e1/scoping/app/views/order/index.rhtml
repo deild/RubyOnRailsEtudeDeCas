@@ -1,0 +1,14 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<h1>Order#index</h1>
+
+<ul>
+  <% @orders.each do |order| %>
+  
+  <li><%= order.user_id %></li>
+  
+  <% end %>
+</ul>

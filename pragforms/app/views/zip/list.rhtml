@@ -1,0 +1,32 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<h1>Listing zips</h1>
+
+<table>
+  <tr>
+  <% for column in Zip.user_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for zip in @zips %>
+  <tr>
+  <% for column in Zip.user_columns %>
+    <td><%=h zip.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => zip %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => zip %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => zip }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @zip_pages.current.previous } if @zip_pages.current.previous %>
+<%= link_to 'Next page', { :page => @zip_pages.current.next } if @zip_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New zip', :action => 'new' %>

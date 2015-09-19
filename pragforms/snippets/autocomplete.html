@@ -1,0 +1,15 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<input id="user_favorite_language" 
+       name="user[favorite_language]"/>
+<div class="auto_complete" 
+     id="user_favorite_language_auto_complete"></div>
+<script type="text/javascript">
+new Ajax.Autocompleter('user_favorite_language',    
+                       'user_favorite_language_auto_complete', 
+                       '/user/autocomplete_favorite_language', 
+                       {})
+</script>

@@ -1,0 +1,26 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<h1>Boucle ERB simple</h1>
+
+<% 3.times do %> 
+  Ho!<br /> 
+<% end %> 
+Joyeux Noël! 
+
+
+<h1>Boucle avec suppression des nouvelles lignes dans le code HTML</h1>
+
+<% 3.times do -%>
+  Ho!<br /> 
+<% end %> 
+Joyeux Noël! 
+
+<h1>Boucle avec un compteur</h1>
+
+<% 3.downto(1) do |count| -%> 
+   <%= count %>...<br /> 
+<% end -%> 
+Décollage

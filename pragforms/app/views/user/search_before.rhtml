@@ -1,0 +1,13 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<%= form_tag('javascript:void(0)', {:method=> 'filter'}) do %>
+  <div class="fake-h1">Listing users
+  <%= text_field_tag 'search', @search %>
+  </div>
+<% end %>
+<div id='ajaxWrapper'>
+<%= render :partial=>'search' %>  
+</div>

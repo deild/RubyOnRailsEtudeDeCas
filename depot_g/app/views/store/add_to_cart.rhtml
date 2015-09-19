@@ -1,0 +1,7 @@
+<h1>Votre panier</h1>
+
+<ul>
+  <% for cart_item in @cart.items %>
+    <li><%= cart_item.quantity %> &times; <%= h(cart_item.title) %></li>
+  <% end %>
+</ul>

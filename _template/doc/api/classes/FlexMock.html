@@ -1,0 +1,362 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: FlexMock</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">FlexMock</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/vendor/rails/activesupport/lib/active_support/vendor/flexmock_rb.html">
+                vendor/rails/activesupport/lib/active_support/vendor/flexmock.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="FlexMock.html">FlexMock</a> is a flexible mock object suitable for
+using with Ruby&#8217;s Test::Unit unit test framework. <a
+href="FlexMock.html">FlexMock</a> has a simple interface that&#8217;s easy
+to remember, and leaves the hard stuff to all those other mock object
+implementations.
+</p>
+<p>
+Usage: See TestSamples for example usage.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000031">method_missing</a>&nbsp;&nbsp;
+      <a href="#M000029">mock_count</a>&nbsp;&nbsp;
+      <a href="#M000027">mock_handle</a>&nbsp;&nbsp;
+      <a href="#M000030">mock_ignore_missing</a>&nbsp;&nbsp;
+      <a href="#M000028">mock_verify</a>&nbsp;&nbsp;
+      <a href="#M000026">new</a>&nbsp;&nbsp;
+      <a href="#M000032">use</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name">Test::Unit::Assertions</span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
+
+        <div class="method-heading">
+          <a href="#M000026" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Create a <a href="FlexMock.html">FlexMock</a> object.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000026-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000026-source">
+<pre>
+    <span class="ruby-comment cmt"># File vendor/rails/activesupport/lib/active_support/vendor/flexmock.rb, line 25</span>
+25:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+26:     <span class="ruby-ivar">@handlers</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+27:     <span class="ruby-ivar">@counts</span>   = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
+28:     <span class="ruby-ivar">@expected_counts</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+29:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000032" class="method-detail">
+        <a name="M000032"></a>
+
+        <div class="method-heading">
+          <a href="#M000032" class="method-signature">
+          <span class="method-name">use</span><span class="method-args">() {|mock| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Class method to make sure that verify is called at the end of a test.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000032-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000032-source">
+<pre>
+    <span class="ruby-comment cmt"># File vendor/rails/activesupport/lib/active_support/vendor/flexmock.rb, line 78</span>
+78:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">use</span>
+79:     <span class="ruby-identifier">mock</span> = <span class="ruby-identifier">new</span>
+80:     <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">mock</span>
+81:   <span class="ruby-keyword kw">ensure</span>
+82:     <span class="ruby-identifier">mock</span>.<span class="ruby-identifier">mock_verify</span>
+83:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000031" class="method-detail">
+        <a name="M000031"></a>
+
+        <div class="method-heading">
+          <a href="#M000031" class="method-signature">
+          <span class="method-name">method_missing</span><span class="method-args">(sym, *args, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Handle missing methods by attempting to look up a handler.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000031-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000031-source">
+<pre>
+    <span class="ruby-comment cmt"># File vendor/rails/activesupport/lib/active_support/vendor/flexmock.rb, line 66</span>
+66:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">sym</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+67:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">handler</span> = <span class="ruby-ivar">@handlers</span>[<span class="ruby-identifier">sym</span>]
+68:       <span class="ruby-ivar">@counts</span>[<span class="ruby-identifier">sym</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+69:       <span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">block</span>  <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+70:       <span class="ruby-identifier">handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+71:     <span class="ruby-keyword kw">else</span>
+72:       <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">sym</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)  <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@ignore_missing</span>
+73:     <span class="ruby-keyword kw">end</span>
+74:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000029" class="method-detail">
+        <a name="M000029"></a>
+
+        <div class="method-heading">
+          <a href="#M000029" class="method-signature">
+          <span class="method-name">mock_count</span><span class="method-args">(sym)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Report how many times a method was called.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000029-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000029-source">
+<pre>
+    <span class="ruby-comment cmt"># File vendor/rails/activesupport/lib/active_support/vendor/flexmock.rb, line 56</span>
+56:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mock_count</span>(<span class="ruby-identifier">sym</span>)
+57:     <span class="ruby-ivar">@counts</span>[<span class="ruby-identifier">sym</span>]
+58:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000027" class="method-detail">
+        <a name="M000027"></a>
+
+        <div class="method-heading">
+          <a href="#M000027" class="method-signature">
+          <span class="method-name">mock_handle</span><span class="method-args">(sym, expected_count=nil, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Handle all messages denoted by <tt>sym</tt> by calling the given block and
+passing any parameters to the block. If we know exactly how many calls are
+to be made to a particular method, we may check that by passing in the
+number of expected calls as a second paramter.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000027-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000027-source">
+<pre>
+    <span class="ruby-comment cmt"># File vendor/rails/activesupport/lib/active_support/vendor/flexmock.rb, line 36</span>
+36:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mock_handle</span>(<span class="ruby-identifier">sym</span>, <span class="ruby-identifier">expected_count</span>=<span class="ruby-keyword kw">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+37:     <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+38:       <span class="ruby-ivar">@handlers</span>[<span class="ruby-identifier">sym</span>] = <span class="ruby-identifier">block</span>
+39:     <span class="ruby-keyword kw">else</span>
+40:       <span class="ruby-ivar">@handlers</span>[<span class="ruby-identifier">sym</span>] = <span class="ruby-identifier">proc</span> { }
+41:     <span class="ruby-keyword kw">end</span>
+42:     <span class="ruby-ivar">@expected_counts</span>[<span class="ruby-identifier">sym</span>] = <span class="ruby-identifier">expected_count</span>  <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">expected_count</span>
+43:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000030" class="method-detail">
+        <a name="M000030"></a>
+
+        <div class="method-heading">
+          <a href="#M000030" class="method-signature">
+          <span class="method-name">mock_ignore_missing</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Ignore all undefined (missing) method calls.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000030-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000030-source">
+<pre>
+    <span class="ruby-comment cmt"># File vendor/rails/activesupport/lib/active_support/vendor/flexmock.rb, line 61</span>
+61:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mock_ignore_missing</span>
+62:     <span class="ruby-ivar">@ignore_missing</span> = <span class="ruby-keyword kw">true</span>
+63:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000028" class="method-detail">
+        <a name="M000028"></a>
+
+        <div class="method-heading">
+          <a href="#M000028" class="method-signature">
+          <span class="method-name">mock_verify</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Verify that each method that had an explicit expected count was actually
+called that many times.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000028-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000028-source">
+<pre>
+    <span class="ruby-comment cmt"># File vendor/rails/activesupport/lib/active_support/vendor/flexmock.rb, line 47</span>
+47:   <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">mock_verify</span>
+48:     <span class="ruby-ivar">@expected_counts</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+49:       <span class="ruby-identifier">assert_equal</span> <span class="ruby-ivar">@expected_counts</span>[<span class="ruby-identifier">key</span>], <span class="ruby-ivar">@counts</span>[<span class="ruby-identifier">key</span>],
+50:         <span class="ruby-node">&quot;Expected method #{key} to be called #{@expected_counts[key]} times, &quot;</span> <span class="ruby-operator">+</span>
+51:         <span class="ruby-node">&quot;got #{@counts[key]}&quot;</span>
+52:     <span class="ruby-keyword kw">end</span>
+53:   <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

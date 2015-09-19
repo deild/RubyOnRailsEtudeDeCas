@@ -1,0 +1,20 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<% form_tag('javascript:void(0)', {:method=> 'filter'}) do %>
+  <div class="fake-h1">Listing users
+  <%= text_field_tag 'search', @search %>
+  <%= observe_field :search,
+                   :frequency => 0.5,
+                   :update => 'ajaxWrapper',
+                   :complete=>"Element.hide('spinner')",
+                   :before=>"Element.show('spinner')",
+                   :with=>"'search=' + encodeURIComponent(value)",
+                   :url=>{:action=>'search', :only_path => false} %>
+  </div>
+<% end %>
+<div id='ajaxWrapper'>
+<%= render :partial=>'search' %>  
+</div>

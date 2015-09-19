@@ -1,0 +1,16 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<%= error_messages_for 'user' %>
+
+<!--[form:user]-->
+<p><label for="user_username">Username</label><br/>
+<%= text_field 'user', 'username'  %></p>
+
+<p><label for="user_favorite_language">Favorite language</label><br/>
+<%= text_field 'user', 'favorite_language'  %></p>
+
+<!--[eoform:user]-->
+

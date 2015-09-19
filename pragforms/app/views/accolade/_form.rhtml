@@ -1,0 +1,15 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<%= error_messages_for 'accolade' %>
+
+<!--[form:accolade]-->
+<p><label for="accolade_name">Name</label><br/>
+<%= text_field 'accolade', 'name'  %></p>
+
+<p><label for="accolade_received">Received</label><br/>
+<%= date_select 'accolade', 'received'  %></p>
+<!--[eoform:accolade]-->
+

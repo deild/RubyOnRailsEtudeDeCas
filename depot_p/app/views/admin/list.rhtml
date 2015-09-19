@@ -1,0 +1,41 @@
+<div id="product-list">
+  <h1>Liste des produits</h1>
+
+  <table cellpadding="5" cellspacing="0">
+  <% for product in @products %>
+    <tr valign="top" class="<%= cycle('list-line-odd', 'list-line-even') %>">
+
+      <td>
+        <img class="list-image" src="<%= product.image_url %>"/>
+      </td>
+
+      <td width="60%">
+        <span class="list-title"><%= h(product.title) %></span><br />
+        <%= h(truncate(product.description, 80)) %>
+      </td>
+
+      <td class="list-actions">
+        <%= link_to 'Afficher', :action => 'show', :id => product %><br/>
+        <%= link_to 'Editer', :action => 'edit', :id => product %><br/>
+        <%= link_to 'Supprimer', { :action  => 'destroy', :id => product },
+                                 :confirm => "Supprimer l'enregistrement ?",
+                                 :method  => :post %>
+      </td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+
+<%=  if @product_pages.current.previous 
+       link_to("Page précédente", { :page => @product_pages.current.previous })
+     end
+%>
+
+<%= if @product_pages.current.next 
+      link_to("Page suivante", { :page => @product_pages.current.next })
+    end
+%>
+
+<br />
+
+<%= link_to 'Nouveau produit', :action => 'new' %>

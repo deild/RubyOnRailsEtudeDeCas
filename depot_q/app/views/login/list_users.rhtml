@@ -1,0 +1,20 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<h1>Administrators</h1>
+<ul>
+  <% for user in @all_users %>
+    <li><%= link_to "[X]", { # link_to options
+                             :controller => 'login', 
+                             :action => 'delete_user',
+                             :id => user},
+                           { # html options
+                             :method  => :post,
+                             :confirm => "Really delete #{user.name}?"
+                           } %>
+        <%= h(user.name) %>
+    </li>
+  <% end %>
+</ul>

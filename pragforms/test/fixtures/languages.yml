@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+first:
+  id: 1
+  name: english
+  shortest_wiki: 4
+another:
+  id: 2
+  name: french
+  shortest_wiki: 6

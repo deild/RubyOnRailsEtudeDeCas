@@ -1,0 +1,17 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<%= @dynamic_content %> <!-- Here's dynamic content. -->
+
+<% cache do %>          <!-- Here's the content we cache -->
+  <ul>
+    <% for article in @articles -%>
+      <li><p><%= h(article.body) %></p></li>
+    <% end -%>
+  </ul>
+<% end %>               <!-- End of the cached content -->
+
+<%= @dynamic_content %> <!-- More dynamic content. -->
+

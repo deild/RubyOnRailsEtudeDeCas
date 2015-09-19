@@ -1,0 +1,31 @@
+Exercise: 
+  Write a page for the say application that
+  illustrates the looping you can do in ERb.
+
+What I did:
+  - added an action called erb_loops to the say_controller.rb file
+  - wrote a simple template called erb_loops.rhtml in the app/views/say
+    directory
+    
+    
+    
+Exercise:
+  Experiment with adding and removing the minus sign at the
+  end of the ERb <%= %> sequence (ie, changing %> into -%> 
+  and vice versa. Use your browsers View->Source
+  option to see the difference.
+  
+What I did:
+  - add and remove the minus signs in the erb_loops.rhtml template
+    and look at the page source
+    
+    
+    
+Exercise:
+  Use Dir.glob to display a list of files in the browser
+  
+What I did:
+  - added an action called file_list to the say_controller.rb file
+  - wrote a template called file_list.rhtml in the app/views/say
+    directory. 
+  

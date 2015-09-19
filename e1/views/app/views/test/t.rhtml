@@ -1,0 +1,28 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<% @user = "cat"
+   def @user.name
+   false
+   end
+@dave = "fred"
+%>
+
+<% form_tag({ :action => :save }, 
+            { :class  => "compact", :multipart => true }) do 
+%>
+
+<%= check_box(:user, :name, {}, "on", "off") %><br/>
+<%= file_field(:user, :name) %><br />				 %>
+<%= text_field(:user, :name) %><br/>
+<%= hidden_field(:user, :name) %><br/>
+<%= radio_button(:user, :name, "joe") %><br/>
+<%= radio_button(:user, :name, "fred") %><br/>
+<%= password_field(:user, :name) %>
+<p>
+<%= text_area(:user, :name) %>
+
+
+<% end %>

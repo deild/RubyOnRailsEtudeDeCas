@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Administrer la librairie</title>
+  <%= stylesheet_link_tag "scaffold", "depot", :media => "all" %>
+</head>
+<body id="admin">
+  <div id="banner">
+    <img src="/images/logo.png"/>
+    <%= @page_title || "La librairie pragmatique" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <p>
+        <%= link_to "Produits",   :controller => 'admin', :action => 'list' %>
+      </p>
+      <p>
+        <%= link_to "Liste des utilisateurs", :controller => 'login', :action => 'list_users' %>
+        <br/>
+        <%= link_to "Ajouter un utilisateur",   :controller => 'login', :action => 'add_user' %>
+      </p>
+      <p>
+        <%= link_to "Déconnection",     :controller => 'login', :action => 'logout' %>
+      </p>
+    </div>
+    <div id="main">
+    <% if flash[:notice] -%>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end -%>
+      <%= yield :layout %>
+    </div>
+  </div>
+</body>
+</html>

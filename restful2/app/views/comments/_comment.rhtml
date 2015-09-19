@@ -1,0 +1,21 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<div class="comment">
+  <p>
+    <strong>Comment last updated: <%= comment.updated_at %></strong>
+    <%= link_to "Edit", edit_comment_url(:id => comment,
+                                    :article_id => comment.article) %>
+
+    <%= link_to "Delete", comment_url(:id => comment,
+                                      :article_id => comment.article), 
+                                      :method => :delete %>
+  </p>
+  <blockquote>
+    <%= h(comment.comment) %>
+  </blockquote>
+
+
+</div>                                    

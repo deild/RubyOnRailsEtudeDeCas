@@ -1,0 +1,52 @@
+# Logfile created on Tue Jan 30 01:34:22 +0100 2007 by logger.rb/1.5.2.9
+
+
+Processing SayController#index (for 127.0.0.1 at 2007-01-30 01:37:07) [GET]
+  Session ID: 5bbe0b71fcef42212b651aa4a715e112
+  Parameters: {"action"=>"index", "controller"=>"say"}
+
+
+ActionController::UnknownAction (No action responded to index):
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/actionpack-1.13.1/lib/action_controller/filters.rb:632:in `call_filter'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/actionpack-1.13.1/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/actionpack-1.13.1/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /opt/software/ruby-1.8.5/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/actionpack-1.13.1/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/actionpack-1.13.1/lib/action_controller/rescue.rb:83:in `perform_action'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/actionpack-1.13.1/lib/action_controller/base.rb:430:in `send'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/actionpack-1.13.1/lib/action_controller/base.rb:430:in `process_without_filters'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/actionpack-1.13.1/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/actionpack-1.13.1/lib/action_controller/session_management.rb:114:in `process'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/actionpack-1.13.1/lib/action_controller/base.rb:330:in `process'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/rails-1.2.1/lib/dispatcher.rb:41:in `dispatch'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:78:in `process'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `synchronize'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/rails.rb:76:in `process'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:618:in `process_client'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `each'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:617:in `process_client'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `initialize'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `new'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:736:in `run'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `initialize'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `new'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel.rb:720:in `run'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:271:in `run'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `each'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/configurator.rb:270:in `run'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:127:in `run'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/lib/mongrel/command.rb:211:in `run'
+    /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/mongrel-1.0.1/bin/mongrel_rails:243
+    /opt/software/ruby-1.8.5/bin/mongrel_rails:18:in `load'
+    /opt/software/ruby-1.8.5/bin/mongrel_rails:18
+
+
+Rendering /opt/software/ruby-1.8.5/lib/ruby/gems/1.8/gems/actionpack-1.13.1/lib/action_controller/templates/rescues/layout.rhtml (404 Page Not Found)
+
+
+Processing SayController#hello (for 127.0.0.1 at 2007-01-30 01:37:15) [GET]
+  Session ID: 5bbe0b71fcef42212b651aa4a715e112
+  Parameters: {"action"=>"hello", "controller"=>"say"}
+Rendering say/hello
+Completed in 0.00168 (594 reqs/sec) | Rendering: 0.00088 (52%) | 200 OK [http://localhost/say/hello]

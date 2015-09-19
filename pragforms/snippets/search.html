@@ -1,0 +1,20 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<input id="search" name="search" type="text" value="" />
+<script type="text/javascript">
+//<![CDATA[
+new Form.Element.Observer('search', 0.5, function(element, value) {
+  Element.show('spinner'); 
+  new Ajax.Updater('ajaxWrapper', 
+      'http://localhost:3010/user/search', {
+    onComplete:function(request){
+      Element.hide('spinner');
+    }, 
+    parameters:'search=' + encodeURIComponent(value)
+  })
+})
+//]]>
+</script>

@@ -1,0 +1,11 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<% tagged_form_for :product, :url => { :action => :save } do |form| %>
+  <%= form.text_field 'title'  %>
+  <%= form.text_area  'description'  %>
+  <%= form.text_field 'image_url'  %>
+  <%= submit_tag %>
+<% end %>

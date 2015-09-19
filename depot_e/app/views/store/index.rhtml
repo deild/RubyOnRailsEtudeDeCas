@@ -1,0 +1,15 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<h1>Your Pragmatic Catalog</h1>
+
+<% for product in @products -%>
+  <div class="entry">
+    <img src="<%= product.image_url %>"/>
+    <h3><%= h(product.title) %></h3>
+    <%= product.description %>
+    <span class="price"><%= product.price %></span>
+  </div>
+<% end %>

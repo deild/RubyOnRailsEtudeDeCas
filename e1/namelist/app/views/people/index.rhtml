@@ -1,0 +1,23 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<table border="1">
+  <tr>
+    <th>Name</th><th>bytes</th><th>chars</th><th>reversed</th>
+  </tr>
+  <% for person in @people %>
+    <tr>  
+      <td><%= h(person.name) %>  
+      <td><%= person.name.length %></td>
+      <td><%= person.name.chars.length %></td>
+      <td><%= h(person.name.chars.reverse) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<% form_for :person do |form| %>
+  New name: <%= form.text_field :name %>
+  <%= submit_tag "Add" %>
+<% end %>

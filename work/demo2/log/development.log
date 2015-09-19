@@ -1,0 +1,15 @@
+# Logfile created on Tue Jan 30 01:47:38 +0100 2007 by logger.rb/1.5.2.9
+
+
+Processing SayController#hello (for 127.0.0.1 at 2007-01-30 01:47:58) [GET]
+  Session ID: 5bbe0b71fcef42212b651aa4a715e112
+  Parameters: {"action"=>"hello", "controller"=>"say"}
+Rendering say/hello
+Completed in 0.00154 (650 reqs/sec) | Rendering: 0.00084 (54%) | 200 OK [http://localhost/say/hello]
+
+
+Processing SayController#hello (for 127.0.0.1 at 2007-01-30 02:06:44) [GET]
+  Session ID: 5bbe0b71fcef42212b651aa4a715e112
+  Parameters: {"action"=>"hello", "controller"=>"say"}
+Rendering say/hello
+Completed in 0.00157 (636 reqs/sec) | Rendering: 0.00088 (56%) | 200 OK [http://localhost/say/hello]

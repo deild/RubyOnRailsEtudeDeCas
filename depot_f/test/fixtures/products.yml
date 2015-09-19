@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+first:
+   id: 1
+   title: Bien développer pour le Web 2.0
+   description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+   image_url: /images/bien_developper.jpg
+   price: 42.00
+
+another:
+   id: 2
+   title: "Design Web : utiliser les standards"
+   description: Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+   image_url: /images/standards.jpg
+   price: 33.00
+

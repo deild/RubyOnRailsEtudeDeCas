@@ -1,0 +1,18 @@
+<div class="cart-title">Votre panier</div>
+<table>
+  <% for cart_item in @cart.items %>
+    <tr>
+      <td><%= cart_item.quantity %>&times;</td>
+      <td><%= h(cart_item.title) %></td>
+      <td class="item-price"><%= number_to_currency(cart_item.price, :unit => "&euro;") %></td>
+    </tr>
+  <% end %>  
+  
+  <tr class="total-line">
+    <td colspan="2">Total</td>
+    <td class="total-cell"><%= number_to_currency(@cart.total_price, :unit => "&euro;") %></td>
+  </tr>
+
+</table>
+  
+<%= button_to "Vider le panier", :action => :empty_cart %>

@@ -1,0 +1,15 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<h1>New product</h1>
+
+<% form_tag :action => 'create' do %>
+  <%= render(:partial => "form") %>
+  <%= submit_tag "Create" %>
+<% end %>
+
+<%= error_message_on(:product, :title) %>
+
+<%= link_to 'Back', :action => 'list' %>

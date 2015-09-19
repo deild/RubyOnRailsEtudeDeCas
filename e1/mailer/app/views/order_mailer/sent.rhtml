@@ -1,0 +1,15 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<h3>Pragmatic Order Shipped</h3>
+<p>
+  This is just to let you know that we've shipped your recent order:
+</p>
+
+<table>
+ <tr><th colspan="2">Qty</th><th>Description</th></tr>
+ <%= render(:partial => "./html_line_item", :collection => @order.line_items) %>
+</table>
+

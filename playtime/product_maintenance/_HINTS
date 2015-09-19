@@ -1,0 +1,36 @@
+Exercise:
+  The method validates_length_of checks the length of a
+  model attribute. Add validation to the product model to check
+  that the title is at least 10 characters long.
+  
+What I did:
+  - I added the following line to the file product.rb in the app/models directory
+  
+      validates_length_of :title, :minimum => 10
+      
+    To find the syntax, I looked up the method on http://api.rubyonrails.com
+
+
+Exercise:
+  Change the error message associated with one of your
+  validations.
+  
+What I did:
+  - I changed the validation of the price, adding the :message option
+  
+      validates_numericality_of :price,
+                                :message => "should be a number like 12.34"
+
+
+Exercise:
+  Add the product price to the output of the list action.
+
+What I did:
+
+  - I added a new column to the table in list.rhtml:
+  
+      <td>
+        <span class="list-price"><%= h(product.price) %></span>
+      </td>
+
+  - I added a new entry in the depot.css stylesheet for list-price

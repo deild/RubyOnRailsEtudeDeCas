@@ -1,0 +1,21 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<h1>Zip Lookup Results</h1>
+
+<table>
+  <tr>
+    <td>Zip</td>
+    <td><%= @zip.zip %></td>
+  </tr>
+  <tr>
+    <td>City</td>
+    <td><%= @zip.city || "Not Found" %></td>
+  </tr>  
+  <tr>
+    <td>State</td>
+    <td><%= @zip.state || "Not Found" %></td>
+  </tr>  
+</table>

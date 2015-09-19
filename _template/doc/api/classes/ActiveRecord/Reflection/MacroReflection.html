@@ -1,0 +1,342 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: ActiveRecord::Reflection::MacroReflection</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">ActiveRecord::Reflection::MacroReflection</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/vendor/rails/activerecord/lib/active_record/reflection_rb.html">
+                vendor/rails/activerecord/lib/active_record/reflection.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Abstract base class for AggregateReflection and AssociationReflection that
+describes the interface available for both of those classes. Objects of
+AggregateReflection and AssociationReflection are returned by the <a
+href="ClassMethods.html">Reflection::ClassMethods</a>.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000765">==</a>&nbsp;&nbsp;
+      <a href="#M000764">class_name</a>&nbsp;&nbsp;
+      <a href="#M000763">klass</a>&nbsp;&nbsp;
+      <a href="#M000761">macro</a>&nbsp;&nbsp;
+      <a href="#M000760">name</a>&nbsp;&nbsp;
+      <a href="#M000759">new</a>&nbsp;&nbsp;
+      <a href="#M000762">options</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">active_record</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000759" class="method-detail">
+        <a name="M000759"></a>
+
+        <div class="method-heading">
+          <a href="#M000759" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">(macro, name, options, active_record)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000759-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000759-source">
+<pre>
+    <span class="ruby-comment cmt"># File vendor/rails/activerecord/lib/active_record/reflection.rb, line 61</span>
+61:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">macro</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">active_record</span>)
+62:         <span class="ruby-ivar">@macro</span>, <span class="ruby-ivar">@name</span>, <span class="ruby-ivar">@options</span>, <span class="ruby-ivar">@active_record</span> = <span class="ruby-identifier">macro</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">active_record</span>
+63:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000765" class="method-detail">
+        <a name="M000765"></a>
+
+        <div class="method-heading">
+          <a href="#M000765" class="method-signature">
+          <span class="method-name">==</span><span class="method-args">(other_aggregation)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000765-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000765-source">
+<pre>
+    <span class="ruby-comment cmt"># File vendor/rails/activerecord/lib/active_record/reflection.rb, line 91</span>
+91:       <span class="ruby-keyword kw">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">other_aggregation</span>)
+92:         <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other_aggregation</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">other_aggregation</span>.<span class="ruby-identifier">options</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">active_record</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other_aggregation</span>.<span class="ruby-identifier">active_record</span>
+93:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000764" class="method-detail">
+        <a name="M000764"></a>
+
+        <div class="method-heading">
+          <a href="#M000764" class="method-signature">
+          <span class="method-name">class_name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000764-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000764-source">
+<pre>
+    <span class="ruby-comment cmt"># File vendor/rails/activerecord/lib/active_record/reflection.rb, line 87</span>
+87:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">class_name</span>
+88:         <span class="ruby-ivar">@class_name</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">name_to_class_name</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">id2name</span>)
+89:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000763" class="method-detail">
+        <a name="M000763"></a>
+
+        <div class="method-heading">
+          <a href="#M000763" class="method-signature">
+          <span class="method-name">klass</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the class for the macro, so &quot;composed_of :balance, :<a
+href="MacroReflection.html#M000764">class_name</a> =&gt;
+&#8216;Money&#8217;&quot; would return the Money class and &quot;has_many
+:clients&quot; would return the Client class.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000763-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000763-source">
+<pre>
+    <span class="ruby-comment cmt"># File vendor/rails/activerecord/lib/active_record/reflection.rb, line 85</span>
+85:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">klass</span>() <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000761" class="method-detail">
+        <a name="M000761"></a>
+
+        <div class="method-heading">
+          <a href="#M000761" class="method-signature">
+          <span class="method-name">macro</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the name of the macro, so it would return :composed_of for
+&quot;composed_of :balance, :<a
+href="MacroReflection.html#M000764">class_name</a> =&gt;
+&#8216;Money&#8217;&quot; or :has_many for &quot;has_many :clients&quot;.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000761-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000761-source">
+<pre>
+    <span class="ruby-comment cmt"># File vendor/rails/activerecord/lib/active_record/reflection.rb, line 73</span>
+73:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">macro</span>
+74:         <span class="ruby-ivar">@macro</span>
+75:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000760" class="method-detail">
+        <a name="M000760"></a>
+
+        <div class="method-heading">
+          <a href="#M000760" class="method-signature">
+          <span class="method-name">name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the name of the macro, so it would return :balance for
+&quot;composed_of :balance, :<a
+href="MacroReflection.html#M000764">class_name</a> =&gt;
+&#8216;Money&#8217;&quot; or :clients for &quot;has_many :clients&quot;.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000760-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000760-source">
+<pre>
+    <span class="ruby-comment cmt"># File vendor/rails/activerecord/lib/active_record/reflection.rb, line 67</span>
+67:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">name</span>
+68:         <span class="ruby-ivar">@name</span>
+69:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000762" class="method-detail">
+        <a name="M000762"></a>
+
+        <div class="method-heading">
+          <a href="#M000762" class="method-signature">
+          <span class="method-name">options</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the hash of options used for the macro, so it would return { :<a
+href="MacroReflection.html#M000764">class_name</a> =&gt; &quot;Money&quot;
+} for &quot;composed_of :balance, :<a
+href="MacroReflection.html#M000764">class_name</a> =&gt;
+&#8216;Money&#8217;&quot; or {} for &quot;has_many :clients&quot;.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000762-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000762-source">
+<pre>
+    <span class="ruby-comment cmt"># File vendor/rails/activerecord/lib/active_record/reflection.rb, line 79</span>
+79:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">options</span>
+80:         <span class="ruby-ivar">@options</span>
+81:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

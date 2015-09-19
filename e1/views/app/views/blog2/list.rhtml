@@ -1,0 +1,18 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<% cache(:action => 'list', :part => 'articles') do %>
+  <ul>
+    <% for article in @articles -%>
+      <li><p><%= h(article.body) %></p></li>
+    <% end -%>
+  </ul>
+<% end %>
+
+<% cache(:action => 'list', :part => 'counts') do %>
+  <p>
+    There are a total of <%= @article_count %> articles.
+  </p>	
+<% end %>

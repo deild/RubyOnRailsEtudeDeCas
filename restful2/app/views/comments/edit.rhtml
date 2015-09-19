@@ -1,0 +1,19 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<% form_for :comment, 
+            :url => comment_url, 
+            :article_id => @article_id, 
+            :html => {:method => :put} do |form| %>
+<fieldset>
+  <legend>Edit this Comment</legend>
+	
+  <%= render :partial => 'form', :object => form %>
+
+  <p>
+    <%= submit_tag "Save" %>
+  </p>
+</fieldset>
+<% end %>

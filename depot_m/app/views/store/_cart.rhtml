@@ -1,0 +1,18 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<% unless cart.items.empty? %>
+<div class="cart-title">Your Cart</div>
+<table>
+  <%= render(:partial => "cart_item", :collection => cart.items) %>
+  
+  <tr class="total-line">
+    <td colspan="2">Total</td>
+    <td class="total-cell"><%= number_to_currency(cart.total_price) %></td>
+  </tr>
+</table>
+
+<%= button_to "Empty cart", :action => :empty_cart %>
+<% end %>

@@ -1,0 +1,789 @@
+<!--
+ ! Excerpted from "Ruby on Rails, 2nd Ed."
+ ! We make no guarantees that this code is fit for any purpose. 
+ ! Visit http://www.editions-eyrolles.com/Livre/9782212120790/ for more book information.
+-->
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: ActionController::Routing::RouteSet</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">ActionController::Routing::RouteSet</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/vendor/rails/actionpack/lib/action_controller/routing_rb.html">
+                vendor/rails/actionpack/lib/action_controller/routing.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000234">add_named_route</a>&nbsp;&nbsp;
+      <a href="#M000233">add_route</a>&nbsp;&nbsp;
+      <a href="#M000236">build_expiry</a>&nbsp;&nbsp;
+      <a href="#M000226">builder</a>&nbsp;&nbsp;
+      <a href="#M000228">clear!</a>&nbsp;&nbsp;
+      <a href="#M000227">draw</a>&nbsp;&nbsp;
+      <a href="#M000229">empty?</a>&nbsp;&nbsp;
+      <a href="#M000237">extra_keys</a>&nbsp;&nbsp;
+      <a href="#M000246">extract_request_environment</a>&nbsp;&nbsp;
+      <a href="#M000239">generate</a>&nbsp;&nbsp;
+      <a href="#M000238">generate_extras</a>&nbsp;&nbsp;
+      <a href="#M000230">load!</a>&nbsp;&nbsp;
+      <a href="#M000232">load_routes!</a>&nbsp;&nbsp;
+      <a href="#M000225">new</a>&nbsp;&nbsp;
+      <a href="#M000235">options_as_params</a>&nbsp;&nbsp;
+      <a href="#M000240">recognize</a>&nbsp;&nbsp;
+      <a href="#M000241">recognize_path</a>&nbsp;&nbsp;
+      <a href="#M000231">reload</a>&nbsp;&nbsp;
+      <a href="#M000242">routes_by_controller</a>&nbsp;&nbsp;
+      <a href="#M000243">routes_for</a>&nbsp;&nbsp;
+      <a href="#M000244">routes_for_controller_and_action</a>&nbsp;&nbsp;
+      <a href="#M000245">routes_for_controller_and_action_and_keys</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="RouteSet/Mapper.html" class="link">ActionController::Routing::RouteSet::Mapper</a><br />
+Class <a href="RouteSet/NamedRouteCollection.html" class="link">ActionController::Routing::RouteSet::NamedRouteCollection</a><br />
+
+    </div>
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">named_routes</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">routes</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000225" class="method-detail">
+        <a name="M000225"></a>
+
+        <div class="method-heading">
+          <a href="#M000225" class="method-signature">
+          <span class="method-name">new</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000225-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000225-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1084</span>
+1084:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>
+1085:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">routes</span> = []
+1086:         <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">named_routes</span> = <span class="ruby-constant">NamedRouteCollection</span>.<span class="ruby-identifier">new</span>
+1087:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000234" class="method-detail">
+        <a name="M000234"></a>
+
+        <div class="method-heading">
+          <a href="#M000234" class="method-signature">
+          <span class="method-name">add_named_route</span><span class="method-args">(name, path, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000234-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000234-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1134</span>
+1134:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_named_route</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span> = {})
+1135:         <span class="ruby-identifier">named_routes</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">add_route</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span>)
+1136:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000233" class="method-detail">
+        <a name="M000233"></a>
+
+        <div class="method-heading">
+          <a href="#M000233" class="method-signature">
+          <span class="method-name">add_route</span><span class="method-args">(path, options = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000233-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000233-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1128</span>
+1128:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_route</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span> = {})
+1129:         <span class="ruby-identifier">route</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span>)
+1130:         <span class="ruby-identifier">routes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">route</span>
+1131:         <span class="ruby-identifier">route</span>
+1132:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000236" class="method-detail">
+        <a name="M000236"></a>
+
+        <div class="method-heading">
+          <a href="#M000236" class="method-signature">
+          <span class="method-name">build_expiry</span><span class="method-args">(options, recall)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000236-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000236-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1157</span>
+1157:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">build_expiry</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">recall</span>)
+1158:         <span class="ruby-identifier">recall</span>.<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">expiry</span>, (<span class="ruby-identifier">key</span>, <span class="ruby-identifier">recalled_value</span>)<span class="ruby-operator">|</span>
+1159:           <span class="ruby-identifier">expiry</span>[<span class="ruby-identifier">key</span>] = (<span class="ruby-identifier">options</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">!=</span> <span class="ruby-identifier">recalled_value</span>)
+1160:           <span class="ruby-identifier">expiry</span>
+1161:         <span class="ruby-keyword kw">end</span>
+1162:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000226" class="method-detail">
+        <a name="M000226"></a>
+
+        <div class="method-heading">
+          <a href="#M000226" class="method-signature">
+          <span class="method-name">builder</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Subclasses and plugins may override this method to specify a different <a
+href="RouteBuilder.html">RouteBuilder</a> instance, so that other route
+DSL&#8217;s can be created.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000226-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000226-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1091</span>
+1091:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">builder</span>
+1092:         <span class="ruby-ivar">@builder</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">RouteBuilder</span>.<span class="ruby-identifier">new</span>
+1093:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000228" class="method-detail">
+        <a name="M000228"></a>
+
+        <div class="method-heading">
+          <a href="#M000228" class="method-signature">
+          <span class="method-name">clear!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000228-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000228-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1101</span>
+1101:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clear!</span>
+1102:         <span class="ruby-identifier">routes</span>.<span class="ruby-identifier">clear</span>
+1103:         <span class="ruby-identifier">named_routes</span>.<span class="ruby-identifier">clear</span>
+1104:         <span class="ruby-ivar">@combined_regexp</span> = <span class="ruby-keyword kw">nil</span>
+1105:         <span class="ruby-ivar">@routes_by_controller</span> = <span class="ruby-keyword kw">nil</span>
+1106:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000227" class="method-detail">
+        <a name="M000227"></a>
+
+        <div class="method-heading">
+          <a href="#M000227" class="method-signature">
+          <span class="method-name">draw</span><span class="method-args">() {|Mapper.new(self)| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000227-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000227-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1095</span>
+1095:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">draw</span>
+1096:         <span class="ruby-identifier">clear!</span>
+1097:         <span class="ruby-keyword kw">yield</span> <span class="ruby-constant">Mapper</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>)
+1098:         <span class="ruby-identifier">named_routes</span>.<span class="ruby-identifier">install</span>
+1099:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000229" class="method-detail">
+        <a name="M000229"></a>
+
+        <div class="method-heading">
+          <a href="#M000229" class="method-signature">
+          <span class="method-name">empty?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000229-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000229-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1108</span>
+1108:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">empty?</span>
+1109:         <span class="ruby-identifier">routes</span>.<span class="ruby-identifier">empty?</span>
+1110:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000237" class="method-detail">
+        <a name="M000237"></a>
+
+        <div class="method-heading">
+          <a href="#M000237" class="method-signature">
+          <span class="method-name">extra_keys</span><span class="method-args">(options, recall={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Generate the path indicated by the arguments, and return an array of the
+keys that were not used to generate it.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000237-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000237-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1166</span>
+1166:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extra_keys</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">recall</span>={})
+1167:         <span class="ruby-identifier">generate_extras</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">recall</span>).<span class="ruby-identifier">last</span>
+1168:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000246" class="method-detail">
+        <a name="M000246"></a>
+
+        <div class="method-heading">
+          <a href="#M000246" class="method-signature">
+          <span class="method-name">extract_request_environment</span><span class="method-args">(request)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Subclasses and plugins may override this method to extract further
+attributes from the request, for use by route conditions and such.
+</p>
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000246-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000246-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1275</span>
+1275:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">extract_request_environment</span>(<span class="ruby-identifier">request</span>)
+1276:         { <span class="ruby-identifier">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">method</span> }
+1277:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000239" class="method-detail">
+        <a name="M000239"></a>
+
+        <div class="method-heading">
+          <a href="#M000239" class="method-signature">
+          <span class="method-name">generate</span><span class="method-args">(options, recall = {}, method=:generate)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000239-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000239-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1174</span>
+1174:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">generate</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">recall</span> = {}, <span class="ruby-identifier">method</span>=<span class="ruby-identifier">:generate</span>)
+1175:         <span class="ruby-identifier">named_route_name</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:use_route</span>)
+1176:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">named_route_name</span>
+1177:           <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">dup</span>
+1178:           <span class="ruby-identifier">named_route</span> = <span class="ruby-identifier">named_routes</span>[<span class="ruby-identifier">named_route_name</span>]
+1179:           <span class="ruby-identifier">options</span> = <span class="ruby-identifier">named_route</span>.<span class="ruby-identifier">parameter_shell</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+1180:         <span class="ruby-keyword kw">end</span>
+1181: 
+1182:         <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options_as_params</span>(<span class="ruby-identifier">options</span>)
+1183:         <span class="ruby-identifier">expire_on</span> = <span class="ruby-identifier">build_expiry</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">recall</span>)
+1184: 
+1185:         <span class="ruby-comment cmt"># if the controller has changed, make sure it changes relative to the</span>
+1186:         <span class="ruby-comment cmt"># current controller module, if any. In other words, if we're currently</span>
+1187:         <span class="ruby-comment cmt"># on admin/get, and the new controller is 'set', the new controller</span>
+1188:         <span class="ruby-comment cmt"># should really be admin/set.</span>
+1189:         <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">named_route</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">expire_on</span>[<span class="ruby-identifier">:controller</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:controller</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:controller</span>][<span class="ruby-value">0</span>] <span class="ruby-operator">!=</span> <span class="ruby-value">?/</span>
+1190:           <span class="ruby-identifier">old_parts</span> = <span class="ruby-identifier">recall</span>[<span class="ruby-identifier">:controller</span>].<span class="ruby-identifier">split</span>(<span class="ruby-value str">'/'</span>)
+1191:           <span class="ruby-identifier">new_parts</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:controller</span>].<span class="ruby-identifier">split</span>(<span class="ruby-value str">'/'</span>)
+1192:           <span class="ruby-identifier">parts</span> = <span class="ruby-identifier">old_parts</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-operator">-</span>(<span class="ruby-identifier">new_parts</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)] <span class="ruby-operator">+</span> <span class="ruby-identifier">new_parts</span>
+1193:           <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:controller</span>] = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">'/'</span>)
+1194:         <span class="ruby-keyword kw">end</span>
+1195: 
+1196:         <span class="ruby-comment cmt"># drop the leading '/' on the controller name</span>
+1197:         <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:controller</span>] = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:controller</span>][<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:controller</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:controller</span>][<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value">?/</span>
+1198:         <span class="ruby-identifier">merged</span> = <span class="ruby-identifier">recall</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+1199:     
+1200:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">named_route</span>
+1201:           <span class="ruby-identifier">path</span> = <span class="ruby-identifier">named_route</span>.<span class="ruby-identifier">generate</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">merged</span>, <span class="ruby-identifier">expire_on</span>)
+1202:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">RoutingError</span>, <span class="ruby-node">&quot;#{named_route_name}_url failed to generate from #{options.inspect}, expected: #{named_route.requirements.inspect}, diff: #{named_route.requirements.diff(options).inspect}&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">nil?</span>
+1203:           <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">path</span>
+1204:         <span class="ruby-keyword kw">else</span>
+1205:           <span class="ruby-identifier">merged</span>[<span class="ruby-identifier">:action</span>] <span class="ruby-operator">||=</span> <span class="ruby-value str">'index'</span>
+1206:           <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:action</span>] <span class="ruby-operator">||=</span> <span class="ruby-value str">'index'</span>
+1207:   
+1208:           <span class="ruby-identifier">controller</span> = <span class="ruby-identifier">merged</span>[<span class="ruby-identifier">:controller</span>]
+1209:           <span class="ruby-identifier">action</span> = <span class="ruby-identifier">merged</span>[<span class="ruby-identifier">:action</span>]
+1210: 
+1211:           <span class="ruby-identifier">raise</span> <span class="ruby-constant">RoutingError</span>, <span class="ruby-value str">&quot;Need controller and action!&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">controller</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">action</span>
+1212:           <span class="ruby-comment cmt"># don't use the recalled keys when determining which routes to check</span>
+1213:           <span class="ruby-identifier">routes</span> = <span class="ruby-identifier">routes_by_controller</span>[<span class="ruby-identifier">controller</span>][<span class="ruby-identifier">action</span>][<span class="ruby-identifier">options</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">object_id</span> }]
+1214: 
+1215:           <span class="ruby-identifier">routes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">route</span><span class="ruby-operator">|</span>
+1216:             <span class="ruby-identifier">results</span> = <span class="ruby-identifier">route</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>, <span class="ruby-identifier">merged</span>, <span class="ruby-identifier">expire_on</span>)
+1217:             <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">results</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">results</span>
+1218:           <span class="ruby-keyword kw">end</span>
+1219:         <span class="ruby-keyword kw">end</span>
+1220:     
+1221:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">RoutingError</span>, <span class="ruby-node">&quot;No route matches #{options.inspect}&quot;</span>
+1222:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000238" class="method-detail">
+        <a name="M000238"></a>
+
+        <div class="method-heading">
+          <a href="#M000238" class="method-signature">
+          <span class="method-name">generate_extras</span><span class="method-args">(options, recall={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000238-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000238-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1170</span>
+1170:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">generate_extras</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">recall</span>={})
+1171:         <span class="ruby-identifier">generate</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">recall</span>, <span class="ruby-identifier">:generate_extras</span>)
+1172:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000230" class="method-detail">
+        <a name="M000230"></a>
+
+        <div class="method-heading">
+          <a href="#M000230" class="method-signature">
+          <span class="method-name">load!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000230-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000230-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1112</span>
+1112:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load!</span>
+1113:         <span class="ruby-identifier">clear!</span>
+1114:         <span class="ruby-identifier">load_routes!</span>
+1115:         <span class="ruby-identifier">named_routes</span>.<span class="ruby-identifier">install</span>
+1116:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000232" class="method-detail">
+        <a name="M000232"></a>
+
+        <div class="method-heading">
+          <a href="#M000232" class="method-signature">
+          <span class="method-name">load_routes!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000232-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000232-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1120</span>
+1120:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">load_routes!</span>
+1121:         <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">RAILS_ROOT</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword kw">self</span> <span class="ruby-operator">==</span> <span class="ruby-operator">::</span><span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>
+1122:           <span class="ruby-identifier">load</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-node">&quot;#{RAILS_ROOT}/config/routes.rb&quot;</span>)
+1123:         <span class="ruby-keyword kw">else</span>
+1124:           <span class="ruby-identifier">add_route</span> <span class="ruby-value str">&quot;:controller/:action/:id&quot;</span>
+1125:         <span class="ruby-keyword kw">end</span>
+1126:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000235" class="method-detail">
+        <a name="M000235"></a>
+
+        <div class="method-heading">
+          <a href="#M000235" class="method-signature">
+          <span class="method-name">options_as_params</span><span class="method-args">(options)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000235-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000235-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1138</span>
+1138:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">options_as_params</span>(<span class="ruby-identifier">options</span>)
+1139:         <span class="ruby-comment cmt"># If an explicit :controller was given, always make :action explicit</span>
+1140:         <span class="ruby-comment cmt"># too, so that action expiry works as expected for things like</span>
+1141:         <span class="ruby-comment cmt">#</span>
+1142:         <span class="ruby-comment cmt">#   generate({:controller =&gt; 'content'}, {:controller =&gt; 'content', :action =&gt; 'show'})</span>
+1143:         <span class="ruby-comment cmt">#</span>
+1144:         <span class="ruby-comment cmt"># (the above is from the unit tests). In the above case, because the</span>
+1145:         <span class="ruby-comment cmt"># controller was explicitly given, but no action, the action is implied to</span>
+1146:         <span class="ruby-comment cmt"># be &quot;index&quot;, not the recalled action of &quot;show&quot;.</span>
+1147:         <span class="ruby-comment cmt">#</span>
+1148:         <span class="ruby-comment cmt"># great fun, eh?</span>
+1149: 
+1150:         <span class="ruby-identifier">options_as_params</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:controller</span>] <span class="ruby-operator">?</span> { <span class="ruby-identifier">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;index&quot;</span> } <span class="ruby-operator">:</span> {}
+1151:         <span class="ruby-identifier">options</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+1152:           <span class="ruby-identifier">options_as_params</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_param</span>
+1153:         <span class="ruby-keyword kw">end</span>
+1154:         <span class="ruby-identifier">options_as_params</span>
+1155:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000240" class="method-detail">
+        <a name="M000240"></a>
+
+        <div class="method-heading">
+          <a href="#M000240" class="method-signature">
+          <span class="method-name">recognize</span><span class="method-args">(request)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000240-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000240-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1224</span>
+1224:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">recognize</span>(<span class="ruby-identifier">request</span>)
+1225:         <span class="ruby-identifier">params</span> = <span class="ruby-identifier">recognize_path</span>(<span class="ruby-identifier">request</span>.<span class="ruby-identifier">path</span>, <span class="ruby-identifier">extract_request_environment</span>(<span class="ruby-identifier">request</span>))
+1226:         <span class="ruby-identifier">request</span>.<span class="ruby-identifier">path_parameters</span> = <span class="ruby-identifier">params</span>.<span class="ruby-identifier">with_indifferent_access</span>
+1227:         <span class="ruby-node">&quot;#{params[:controller].camelize}Controller&quot;</span>.<span class="ruby-identifier">constantize</span>
+1228:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000241" class="method-detail">
+        <a name="M000241"></a>
+
+        <div class="method-heading">
+          <a href="#M000241" class="method-signature">
+          <span class="method-name">recognize_path</span><span class="method-args">(path, environment={})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000241-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000241-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1230</span>
+1230:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">recognize_path</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">environment</span>={})
+1231:         <span class="ruby-identifier">path</span> = <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">unescape</span>(<span class="ruby-identifier">path</span>)
+1232:         <span class="ruby-identifier">routes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">route</span><span class="ruby-operator">|</span>
+1233:           <span class="ruby-identifier">result</span> = <span class="ruby-identifier">route</span>.<span class="ruby-identifier">recognize</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">environment</span>) <span class="ruby-keyword kw">and</span> <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">result</span>
+1234:         <span class="ruby-keyword kw">end</span>
+1235:         <span class="ruby-identifier">raise</span> <span class="ruby-constant">RoutingError</span>, <span class="ruby-node">&quot;no route found to match #{path.inspect} with #{environment.inspect}&quot;</span>
+1236:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000231" class="method-detail">
+        <a name="M000231"></a>
+
+        <div class="method-heading">
+          <span class="method-name">reload</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="RouteSet.html#M000230">load!</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000242" class="method-detail">
+        <a name="M000242"></a>
+
+        <div class="method-heading">
+          <a href="#M000242" class="method-signature">
+          <span class="method-name">routes_by_controller</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000242-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000242-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1238</span>
+1238:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">routes_by_controller</span>
+1239:         <span class="ruby-ivar">@routes_by_controller</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">controller_hash</span>, <span class="ruby-identifier">controller</span><span class="ruby-operator">|</span>
+1240:           <span class="ruby-identifier">controller_hash</span>[<span class="ruby-identifier">controller</span>] = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">action_hash</span>, <span class="ruby-identifier">action</span><span class="ruby-operator">|</span>
+1241:             <span class="ruby-identifier">action_hash</span>[<span class="ruby-identifier">action</span>] = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key_hash</span>, <span class="ruby-identifier">keys</span><span class="ruby-operator">|</span>
+1242:               <span class="ruby-identifier">key_hash</span>[<span class="ruby-identifier">keys</span>] = <span class="ruby-identifier">routes_for_controller_and_action_and_keys</span>(<span class="ruby-identifier">controller</span>, <span class="ruby-identifier">action</span>, <span class="ruby-identifier">keys</span>)
+1243:             <span class="ruby-keyword kw">end</span>
+1244:           <span class="ruby-keyword kw">end</span>
+1245:         <span class="ruby-keyword kw">end</span>
+1246:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000243" class="method-detail">
+        <a name="M000243"></a>
+
+        <div class="method-heading">
+          <a href="#M000243" class="method-signature">
+          <span class="method-name">routes_for</span><span class="method-args">(options, merged, expire_on)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000243-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000243-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1248</span>
+1248:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">routes_for</span>(<span class="ruby-identifier">options</span>, <span class="ruby-identifier">merged</span>, <span class="ruby-identifier">expire_on</span>)
+1249:         <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Need controller and action!&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">controller</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">action</span>
+1250:         <span class="ruby-identifier">controller</span> = <span class="ruby-identifier">merged</span>[<span class="ruby-identifier">:controller</span>]
+1251:         <span class="ruby-identifier">merged</span> = <span class="ruby-identifier">options</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">expire_on</span>[<span class="ruby-identifier">:controller</span>]
+1252:         <span class="ruby-identifier">action</span> = <span class="ruby-identifier">merged</span>[<span class="ruby-identifier">:action</span>] <span class="ruby-operator">||</span> <span class="ruby-value str">'index'</span>
+1253:     
+1254:         <span class="ruby-identifier">routes_by_controller</span>[<span class="ruby-identifier">controller</span>][<span class="ruby-identifier">action</span>][<span class="ruby-identifier">merged</span>.<span class="ruby-identifier">keys</span>]
+1255:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000244" class="method-detail">
+        <a name="M000244"></a>
+
+        <div class="method-heading">
+          <a href="#M000244" class="method-signature">
+          <span class="method-name">routes_for_controller_and_action</span><span class="method-args">(controller, action)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000244-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000244-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1257</span>
+1257:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">routes_for_controller_and_action</span>(<span class="ruby-identifier">controller</span>, <span class="ruby-identifier">action</span>)
+1258:         <span class="ruby-identifier">selected</span> = <span class="ruby-identifier">routes</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">route</span><span class="ruby-operator">|</span>
+1259:           <span class="ruby-identifier">route</span>.<span class="ruby-identifier">matches_controller_and_action?</span> <span class="ruby-identifier">controller</span>, <span class="ruby-identifier">action</span>
+1260:         <span class="ruby-keyword kw">end</span>
+1261:         (<span class="ruby-identifier">selected</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">routes</span>.<span class="ruby-identifier">length</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">routes</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">selected</span>
+1262:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+      <div id="method-M000245" class="method-detail">
+        <a name="M000245"></a>
+
+        <div class="method-heading">
+          <a href="#M000245" class="method-signature">
+          <span class="method-name">routes_for_controller_and_action_and_keys</span><span class="method-args">(controller, action, keys)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p><a class="source-toggle" href="#"
+            onclick="toggleCode('M000245-source');return false;">[Source]</a></p>
+          <div class="method-source-code" id="M000245-source">
+<pre>
+      <span class="ruby-comment cmt"># File vendor/rails/actionpack/lib/action_controller/routing.rb, line 1264</span>
+1264:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">routes_for_controller_and_action_and_keys</span>(<span class="ruby-identifier">controller</span>, <span class="ruby-identifier">action</span>, <span class="ruby-identifier">keys</span>)
+1265:         <span class="ruby-identifier">selected</span> = <span class="ruby-identifier">routes</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">route</span><span class="ruby-operator">|</span>
+1266:           <span class="ruby-identifier">route</span>.<span class="ruby-identifier">matches_controller_and_action?</span> <span class="ruby-identifier">controller</span>, <span class="ruby-identifier">action</span>
+1267:         <span class="ruby-keyword kw">end</span>
+1268:         <span class="ruby-identifier">selected</span>.<span class="ruby-identifier">sort_by</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">route</span><span class="ruby-operator">|</span>
+1269:           (<span class="ruby-identifier">keys</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">route</span>.<span class="ruby-identifier">significant_keys</span>).<span class="ruby-identifier">length</span>
+1270:         <span class="ruby-keyword kw">end</span>
+1271:       <span class="ruby-keyword kw">end</span>
+</pre>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>
